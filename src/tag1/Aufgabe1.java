@@ -3,6 +3,11 @@ package tag1;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 
+ * @author Ken Schalhorn, Marco Ehl
+ * @location 03-428
+ */
 public class Aufgabe1 {
 
 	static class Recursive {

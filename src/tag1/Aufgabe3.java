@@ -1,5 +1,10 @@
 package tag1;
 
+/**
+ * 
+ * @author Ken Schalhorn, Marco Ehl
+ * @location 03-428
+ */
 public class Aufgabe3 {
 
 	public int longestAlternatingSubsequence(int[] a) {
