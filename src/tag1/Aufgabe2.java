@@ -2,12 +2,15 @@ package tag1;
 
 public class Aufgabe2 {
 
-	public int lis(int[] a) {
+	public int longestIncresingSubset(int[] a) {
 
+		//get the length of the input array
 		int n = a.length;
+		
+		//temp storage
 		int[] q = new int[n];
 
-		int max = 1;
+		int max;
 		
 		for (int k = 0; k < n; k++) {
 
@@ -36,7 +39,7 @@ public class Aufgabe2 {
 	public static void main(String[] args) {
 		int[] array = { 1,2,3,2,3,4 };
 
-		long result = (new Aufgabe2()).lis(array);
+		long result = (new Aufgabe2()).longestIncresingSubset(array);
 		System.out.println(result);
 	}
 }
