@@ -1,5 +1,11 @@
 package tag1;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  * 
  * @author Ken Schalhorn, Marco Ehl
@@ -33,9 +39,34 @@ public class Aufgabe3 {
 	}
 
 	public static void main(String[] args) {
-		int[] array = { 1, 3, 2 };
+		 FileReader fr;
+		try {
+			fr = new FileReader("smaple.in");
+		
+		    BufferedReader br = new BufferedReader(fr);
+		Scanner scan= new Scanner(br);
+		ArrayList<int[]> array=new ArrayList<int[]>() ;
 
-		long result = (new Aufgabe3()).longestAlternatingSubsequence(array);
-		System.out.println(result);
+		int n = scan.nextInt();
+		
+		while(n>0){
+			int m =scan.nextInt();
+			int[] arr =new int[m];
+			int l =0;
+			while(l<m){
+				arr[l]=scan.nextInt();
+				l++;
+			}
+			array.add(arr);
+			long result = (new Aufgabe3()).longestAlternatingSubsequence(arr);
+			System.out.println(result);
+			
+			n--;
+		}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 }
