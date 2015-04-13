@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Aufgabe1 {
-	private Map<Long, Long> caache = new HashMap<Long, Long>();
 
 	static class Recursive {
 
