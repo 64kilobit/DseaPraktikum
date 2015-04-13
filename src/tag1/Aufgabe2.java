@@ -8,9 +8,11 @@ public class Aufgabe2 {
 		int[] q = new int[n];
 
 		int max = 1;
+		
 		for (int k = 0; k < n; k++) {
 
 			max = 1;
+			
 			for (int j = 0; j < k; j++) {
 
 				if (a[k] > a[j]) {
