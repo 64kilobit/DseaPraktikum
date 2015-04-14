@@ -11,6 +11,8 @@ public class Aufgabe1 {
 	private static int[][] distance;
 	private static int[][] pre;
 	private static int n;
+	
+	
 	private static void dijkstra(){
 		ArrayList<Integer> nodes=new ArrayList<Integer>();
 		for (int i=0;i<distance.length;i++)
