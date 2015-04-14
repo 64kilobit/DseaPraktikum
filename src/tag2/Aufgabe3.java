@@ -5,6 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Ken Schalhorn, Marco Ehl
+ * @location 03-428
+ */
 public class Aufgabe3 {
 
 	private static int[] arr;
@@ -14,14 +19,25 @@ public class Aufgabe3 {
 	private static int check(int a, int b) {
 		if (a == b)
 			return arr[a];
+		
 		if (cache[a][b] > Integer.MIN_VALUE)
 			return cache[a][b];
-		int sum = check(a, b - 1);
-		sum += arr[b];
-		cache[a][b] = sum;
-		if (gain < sum)
-			gain = sum;
-		return sum;
+		if(a<b){
+			int sum = check(a, b - 1);
+			sum += arr[b];
+			cache[a][b] = sum;
+			if (gain < sum)
+				gain = sum;
+			return sum;
+		}
+		else{
+			int sum1= check(a,arr.length-1);
+			int sum2= check(0,b);
+			int sum=sum1+sum2;
+			if(gain<sum)
+				gain=sum;
+			return sum;
+		}
 	}
 
 	private static void init() {
@@ -51,11 +67,13 @@ public class Aufgabe3 {
 
 				cache = new int[m][m];
 				init();
-				check(0, m-1);
-
+				
+				for(int i=0;i<m;i++){
+				check(i, (m - 1+i)%m);
+				}
 
 				System.out.println(gain);
-				gain=0;
+				gain = 0;
 				n--;
 			}
 			scan.close();

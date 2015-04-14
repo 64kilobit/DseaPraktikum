@@ -8,6 +8,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Ken Schalhorn, Marco Ehl
+ * @location 03-428
+ */
 public class Aufgabe2 {
 	
 	private static Map<Integer, Integer> cache = new HashMap<Integer, Integer>();

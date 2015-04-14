@@ -6,6 +6,11 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Ken Schalhorn, Marco Ehl
+ * @location 03-428
+ */
 public class Aufgabe1 {
 
 	private static int[][] distance;
