@@ -11,10 +11,11 @@ import java.util.Map;
 public class Aufgabe4 {
 
 	private static Map<String, Integer> cache = new HashMap<String, Integer>();
+	private static Map<String, String> cachePalindrome = new HashMap<String, String>();
 
 	public static int findMiniPalindrome(String string) {
 		// debug, print tested substring
-		// System.out.println(string);
+		System.out.println(string);
 
 		// string with length <= 1 is always a palindrom, so no insertions are
 		// needed
@@ -35,13 +36,19 @@ public class Aufgabe4 {
 			result = findMiniPalindrome(string
 					.substring(1, string.length() - 1));
 		} else {
-			result = Math
-					.min(
-					// cut of last character
-					findMiniPalindrome(string.substring(0, string.length() - 1)),
-					// cut of first caharcter
-							findMiniPalindrome(string.substring(1,
-									string.length()))) + 1;
+			// cut of first caharcter
+			int cutHead = findMiniPalindrome(string.substring(1,
+					string.length())) + 1;
+
+			// cut of last character
+			int cutTail = findMiniPalindrome(string.substring(0,
+					string.length() - 1)) + 1;
+
+			if (cutHead < cutTail) {
+				result = cutHead;
+			} else {
+				result = cutTail;
+			}
 		}
 
 		// cache the result
@@ -51,7 +58,7 @@ public class Aufgabe4 {
 	}
 
 	public static void main(String[] args) {
-		String testString = "okgopkmiomfsmafoisangfasngnüunapnfpfndsanfdsanfsufn";
+		String testString = "abcd";
 
 		int result = findMiniPalindrome(testString);
 		System.out.println(result);
