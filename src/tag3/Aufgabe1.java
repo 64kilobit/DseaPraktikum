@@ -57,7 +57,7 @@ public class Aufgabe1 {
 
 	public static void main(String[] args) {
 		//tested with strings of length 24
-		String testString = "ABACDBABDFDFJDFDFBCCDFIH";
+		String testString = "ABACDBABDFDFJDFDFBCCDFIAH";
 
 		int result = findMiniPalindrome(testString);
 		System.out.println(result);
