@@ -16,7 +16,7 @@ public class Aufgabe1 {
 	public static int findMinOperations(String string) {
 
 		// debug, print tested substring
-		System.out.println(string);
+		// System.out.println(string);
 
 		// lookup cache
 		if (cache.containsKey(string)) {
