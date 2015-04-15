@@ -13,10 +13,10 @@ public class Aufgabe1 {
 	 * @param string
 	 * @return
 	 */
-	public static int findMiniPalindrome(String string) {
+	public static int findMinOperations(String string) {
 
 		// debug, print tested substring
-		// System.out.println(string);
+		System.out.println(string);
 
 		// lookup cache
 		if (cache.containsKey(string)) {
@@ -28,16 +28,16 @@ public class Aufgabe1 {
 		if (string.length() == 1)
 			return 1;
 
-		//replace same consecutive characters with one aaaaaaabbbbbbb => ab
+		// replace same consecutive characters with one aaaaaaabbbbbbb => ab
 		String stringShort = string.replaceAll("(.)\\1+", "$1");
 		int min = Integer.MAX_VALUE;
-		
+
 		for (int i = 0; i < stringShort.length(); i++) {
 
 			// delete one character
 			String tempString = stringShort.substring(0, i)
 					+ stringShort.substring(i + 1, stringShort.length());
-			int tempCount = findMiniPalindrome(tempString) + 1;
+			int tempCount = findMinOperations(tempString) + 1;
 			// get the minimum
 			if (tempCount < min) {
 				min = tempCount;
@@ -51,10 +51,10 @@ public class Aufgabe1 {
 	}
 
 	public static void main(String[] args) {
-		//tested with strings of length 24
+		// tested with strings of length 24
 		String testString = "ABACDBABDFDFJDFDFBCCDFIH";
 
-		int result = findMiniPalindrome(testString);
+		int result = findMinOperations(testString);
 		System.out.println(result);
 
 	}
