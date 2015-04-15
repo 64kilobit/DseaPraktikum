@@ -129,7 +129,7 @@ public class Aufgabe4 {
 	}
 
 	public static void main(String[] args) {
-		String testString = "rot";
+		String testString = "CBDDECBEDCEBEEEAEBCCAEEAE";
 
 		String result = getMiniPalindrome(testString);
 		System.out.println(result);
