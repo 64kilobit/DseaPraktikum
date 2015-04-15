@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Aufgabe3 {
 
 	private static int[][] fish;
-	private static int cast;
+
 
 	//like egg-dropping problem from ws2012/13
 	private static int fishing(int b, int k) {
