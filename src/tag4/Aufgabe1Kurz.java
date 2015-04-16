@@ -4,6 +4,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Optional;
 
+/**
+ * 
+ * @author Ken Schalhorn, Marco Ehl
+ * @location 03-428
+ */
 public class Aufgabe1Kurz {
 
 	static HashMap<Integer, Integer> cache = new HashMap<Integer, Integer>();

@@ -5,6 +5,11 @@ import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Ken Schalhorn, Marco Ehl
+ * @location 03-428
+ */
 public class Aufgabe1 {
 
 	// Datenstruktur zum Zwischenspeichern
