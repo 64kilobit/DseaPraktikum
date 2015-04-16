@@ -12,26 +12,25 @@ import java.util.Scanner;
  */
 public class Aufgabe3 {
 	
-	private static String treasure(int[] value,int[] weight, int k){
+	private static String treasure(int[] value,int[] weight, int size){
 		
-		return packing( k, value, weight);
-	}
-	
-	private static String packing(int size, int[] value, int[] weight ){
+		//speicher für kleinere Probleme
 		int[][] cache = new int[weight.length+1][size+1];
+		
 		for( int i=1;i<=weight.length;i++)
 			for(int j=1;j<=size;j++)
 				if(weight[i-1]<=j)
+					//vergleich ob es besser ist einen Wert mit reinzunehmen oder nicht
 					cache[i][j]=Math.max(value[i-1]+cache[i-1][j-weight[i-1]],cache[i-1][j]);
 				else
+					//passt item nicht in sack 
 					cache[i][j]=cache[i-1][j];
 		
-		
+		//best Value in letzter Zelle der Matrix
 		return Integer.toString(cache[weight.length][size]);
-		
-		
-		
-	}
+		}
+	
+	
 
 	public static void main(String[] args) {
 		FileReader fr;
